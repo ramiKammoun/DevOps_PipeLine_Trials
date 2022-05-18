@@ -1,0 +1,23 @@
+{
+  "name": "DevOps_PipeLine_Trials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramiKammoun/DevOps_PipeLine_Trials.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramiKammoun/DevOps_PipeLine_Trials/issues"
+  },
+  "homepage": "https://github.com/ramiKammoun/DevOps_PipeLine_Trials#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
