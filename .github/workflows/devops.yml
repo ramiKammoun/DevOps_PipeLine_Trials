@@ -4,8 +4,8 @@ on: [push]
 
 env:
   AWS_REGION: us-east-1
-  ECS_SERVICE: app4test-app            
-  ECS_CLUSTER: app4test               
+  ECS_SERVICE: flask-users-app-devops             
+  ECS_CLUSTER: devops               
   ECS_TASK_DEFINITION: .aws/task-definition.json
   CONTAINER_NAME: rami-devops-app
 
