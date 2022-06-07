@@ -1,4 +1,5 @@
-node_modules
 Dockerfile
-*.spec.js
 .dockerignore
+.git*
+__pycache__
+venv/*
