@@ -7,7 +7,7 @@ def insert_book(book):
     try:
         conn = connect_to_db('database.db')
         cur = conn.cursor()
-        cur.execute("INSERT INTO books (title, author, number) VALUES (?, ?, ?)", (book['title'], book['author'], book['number']) )
+        cur.execute("INSERT INTO books (title, author, numbers) VALUES (?, ?, ?)", (book['title'], book['author'], book['numbers']) )
         conn.commit()
         inserted_book = get_book_by_id(cur.lastrowid)
     except:
@@ -36,7 +36,7 @@ def get_books():
             book["book_id"] = i["book_id"]
             book["title"] = i["title"]
             book["author"] = i["author"]
-            book["number"] = i["number"]
+            book["numbers"] = i["numbers"]
             books.append(book)
 
     except:
@@ -57,7 +57,7 @@ def get_book_by_id(book_id):
         book["book_id"] = row["book_id"]
         book["title"] = row["title"]
         book["author"] = row["author"]
-        book["number"] = row["number"]
+        book["numbers"] = row["numbers"]
     except:
         book = {}
     if book == {}:
@@ -77,7 +77,7 @@ def get_book_by_id2(book_id):
         book["book_id"] = row["book_id"]
         book["title"] = row["title"]
         book["author"] = row["author"]
-        book["number"] = row["number"]
+        book["numbers"] = row["numbers"]
     except:
         book = {}
     return book
@@ -87,7 +87,7 @@ def update_book(book):
     try:
         conn = connect_to_db('database.db')
         cur = conn.cursor()
-        cur.execute("UPDATE books SET title = ?, author = ?, number = ? WHERE book_id =?", (book["title"], book["author"], book["number"], book["book_id"],))
+        cur.execute("UPDATE books SET title = ?, author = ?, numbers = ? WHERE book_id =?", (book["title"], book["author"], book["numbers"], book["book_id"],))
         conn.commit()
         updated_book = get_book_by_id(book["book_id"])
 

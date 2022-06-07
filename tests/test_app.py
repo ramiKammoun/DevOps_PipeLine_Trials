@@ -28,7 +28,7 @@ def test_api_add_book(test_client):
     response = test_client.post('/api/books/add', json={
         "title": "Conversations with friends",
         "author": "Sally Rooney",
-        "number": "123456789",
+        "numbers": "123456789",
     })
     assert expected_status_code == response.json['code']
     assert expected_message == response.json['message']
@@ -36,11 +36,11 @@ def test_api_add_book(test_client):
 def test_api_add_book2(test_client):
     expected_status_code = 200
     expected_message= "book added Successefully"
-    expected_body_keys = ["book_id", "title", "author","number"]
+    expected_body_keys = ["book_id", "title", "author","numbers"]
     response = test_client.post('/api/books/add', json={
         "title": "Normal People",
         "author": "Sally Rooney",
-        "number": "555555874",
+        "numbers": "555555874",
     })
     assert expected_status_code == response.json['code']
     assert expected_message == response.json['message']
@@ -50,11 +50,11 @@ def test_api_add_book2(test_client):
 def test_api_add_book3(test_client):
     expected_status_code = 200
     expected_message= "book added Successefully"
-    expected_body_keys = ["book_id", "title", "author","number"]
+    expected_body_keys = ["book_id", "title", "author","numbers"]
     response = test_client.post('/api/books/add', json={
         "title": "They both die in the end",
         "author": "colleen",
-        "number": "89463168",
+        "numbers": "89463168",
     })
     assert expected_status_code == response.json['code']
     assert expected_message == response.json['message']
@@ -67,19 +67,19 @@ def test_get_all_books(test_client):
         {
             "title": "Conversations with friends",
             "author": "Sally Rooney",
-            "number": "123456789",
+            "numbers": "123456789",
             "book_id":1
         },
         {
             "title": "Normal People",
             "author": "Sally Rooney",
-            "number": "555555874",
+            "numbers": "555555874",
             "book_id":2
         },
         {
             "title": "They both die in the end",
             "author": "colleen",
-            "number": "89463168",
+            "numbers": "89463168",
             "book_id":3
         }
     ]
@@ -112,13 +112,13 @@ def test_get_all_books_after_delete(test_client):
         {
             "title": "Conversations with friends",
             "author": "Sally Rooney",
-            "number": "123456789",
+            "numbers": "123456789",
             "book_id":1
         },
         {
             "title": "They both die in the end",
             "author": "colleen",
-            "number": "89463168",
+            "numbers": "89463168",
             "book_id":3
         }
     ]

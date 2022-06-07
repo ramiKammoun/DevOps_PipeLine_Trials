@@ -13,7 +13,7 @@ def create_db_table(database):
                 book_id INTEGER PRIMARY KEY NOT NULL,
                 title TEXT NOT NULL,
                 author TEXT NOT NULL,
-                number TEXT NOT NULL,
+                numbers TEXT NOT NULL,
             );
         ''')
 
