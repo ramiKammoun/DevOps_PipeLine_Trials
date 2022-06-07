@@ -1,12 +1,11 @@
-name: DevOps pipeline
+name: Soing a pipeleine pipelines
 on: [push]
 env:
   AWS_REGION: us-east-1
   ECS_SERVICE: flask-users-app-devops            
   ECS_CLUSTER: devops                 
   ECS_TASK_DEFINITION: .aws/task-definition.json
-  CONTAINER_NAME: yasmine-devops-app
-jobs:
+  CONTAINER_NAME: rami-apping
   Test:
     runs-on: ubuntu-latest
     strategy:
@@ -24,7 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
-      #- run: pytest -v
   Build:
     runs-on: ubuntu-latest
     needs:
@@ -70,9 +68,9 @@ jobs:
           image: ${{ secrets.DOCKER_HUB_USERNAME }}/flaskusersapp:${{ github.sha }}
 
       - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@de0132cf8cdedb79975c6d42b77eb7ea193cf28e
-        with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
-          wait-for-service-stability: true
+        # uses: aws-actions/amazon-ecs-deploy-task-definition@de0132cf8cdedb79975c6d42b77eb7ea193cf28e
+        # with:
+        #   task-definition: ${{ steps.task-def.outputs.task-definition }}
+        #   service: ${{ env.ECS_SERVICE }}
+        #   cluster: ${{ env.ECS_CLUSTER }}
+        #   wait-for-service-stability: true
