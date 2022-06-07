@@ -33,7 +33,7 @@ def test_api_add_book(test_client):
     assert expected_status_code == response.json['code']
     assert expected_message == response.json['message']
 
-def test_api_add_user2(test_client):
+def test_api_add_book2(test_client):
     expected_status_code = 200
     expected_message= "book added Successefully"
     expected_body_keys = ["book_id", "title", "author","number"]
@@ -113,13 +113,13 @@ def test_get_all_books_after_delete(test_client):
             "title": "Conversations with friends",
             "author": "Sally Rooney",
             "number": "123456789",
-            "user_id":1
+            "book_id":1
         },
         {
             "title": "They both die in the end",
             "author": "colleen",
             "number": "89463168",
-            "user_id":3
+            "book_id":3
         }
     ]
     expected_status_code = 200
